@@ -5,13 +5,16 @@ Look at all the blockchain information live right from your terminal!
 
 # Accuracy 🎯
 
+Do note that the program does scrape the most latest block in the ethereum chain in real-time. However, there might be a slight milisecond or second delay due to the Ethereum's network time, EtherScan's connection delay, or due to Ethereum's Mining rate. 
+
+Of course, there might be factors from the user's end (read "Connecting to the chain" for more details), but these are also some blockchain limitations to consider. 
+
 
 # Program 
 
 ## Connecting to the chain 
 
 In order to start using the commands, it is necessary for the user to connect to the ethereum chain itself. This allows for full functionality of the program. 
-
 
 In order to connect to the chain, the user will be prompted to type a command into their terminal. In this case, we will assume the user has not connected their account yet. And hence, we will with the `/connect_chain` command, the user will be prompted to type their infura url. 
 
@@ -72,6 +75,43 @@ Note that depending on the user's performance and it's background processes, thi
 
 ## Viewing Transaction Details
 
+Users can also view transaction details about a specific block or token. This command works intuitively the same as the processes to retrieve block information as it scrapes a certain token under a specified hash code.
+
+Syntax: `/view_transaction_block`
+
+*Note*: The user must have a hash code of a block for this command to work.
+
+One of the important factors for this command to work is the block hash. There are two ways to retrieve the hash.
+
+    ### Retrieving it from the local variable 
+
+    If the user ran `/view_latest_block` or `/view_multiple_blocks`, the user may have been prompted to save certain bits of information about the block if they wanted to (check "Viewing the latest block" for more details). If the user had saved the block's hash by typing `hash`, then the hash would have been saved under their local variable, which could be used to view the block's transaction details in this case. 
+    
+    For the user to see if they do have any hashes saved, they can type in the command `/retrieve_saved_data` to view all the information that has been saved under their local variable.
+
+    This method is one of the most efficient methods to obtain hashes.
+
+
+    ### Typing the hash code manually
+
+
+    Of course, if the user has a block hash ready to go, the user can deny the prompt of having a block hash saved, and can enter their hash code manually when the program prompts them to.
+
+After inputting the hash, the program will scrape *EtherScan* for it's information. If it has scraped successfully, the user should see information being outputted in the terminal, which at the end, can be saved similar to when retreiving information about blocks (more details about this under "Viewing latest block").
+
+    ### Inputting Issues
+
+    If the user fails to type in a correct input, the progarm will end the process and will prompt the user to type in the command again.
+
+    One of the most common mistakes is to type the wrong number when the program is retreiving hash codes from the user's local varible. *Typing a number that is not listed or a letter* will result in the process ending. 
+
+    Another error which is very common is to have the wrong hash code. Make sure it's the block hash, which can be found explicitly under the "block's hash" section on EtherScan when on a block. Do note that different platforms may have different ways to output their block hash, but it's typically very evident to find it as they will most probably have it under a section called "Block hash" or "Block's hash".
 
 
 # Sources
+
+These sources can be used for reference when there may be a connection error (more details under the "Connecting to the chain" section) or to learn more about how these platforms work.
+
+ - Infura: https://infura.io
+ - EtherScan: https://etherscan.io
+ - Web3: https://web3js.readthedocs.io/en/v1.5.2/
