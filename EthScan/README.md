@@ -85,17 +85,16 @@ One of the important factors for this command to work is the block hash. There a
 
 ### Retrieving it from the local variable 
 
-    If the user ran `/view_latest_block` or `/view_multiple_blocks`, the user may have been prompted to save certain bits of information about the block if they wanted to (check "Viewing the latest block" for more details). If the user had saved the block's hash by typing `hash`, then the hash would have been saved under their local variable, which could be used to view the block's transaction details in this case. 
+If the user ran `/view_latest_block` or `/view_multiple_blocks`, the user may have been prompted to save certain bits of information about the block if they wanted to (check "Viewing the latest block" for more details). If the user had saved the block's hash by typing `hash`, then the hash would have been saved under their local variable, which could be used to view the block's transaction details in this case. 
     
-    For the user to see if they do have any hashes saved, they can type in the command `/retrieve_saved_data` to view all the information that has been saved under their local variable.
+For the user to see if they do have any hashes saved, they can type in the command `/retrieve_saved_data` to view all the information that has been saved under their local variable.
 
-    This method is one of the most efficient methods to obtain hashes.
+This method is one of the most efficient methods to obtain hashes.
 
 
 ### Typing the hash code manually
 
-
-    Of course, if the user has a block hash ready to go, the user can deny the prompt of having a block hash saved, and can enter their hash code manually when the program prompts them to.
+Of course, if the user has a block hash ready to go, the user can deny the prompt of having a block hash saved, and can enter their hash code manually when the program prompts them to.
 
 After inputting the hash, the program will scrape *EtherScan* for it's information. If it has scraped successfully, the user should see information being outputted in the terminal, which at the end, can be saved similar to when retreiving information about blocks (more details about this under "Viewing latest block").
 
