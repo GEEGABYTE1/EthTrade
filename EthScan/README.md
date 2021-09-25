@@ -83,7 +83,7 @@ Syntax: `/view_transaction_block`
 
 One of the important factors for this command to work is the block hash. There are two ways to retrieve the hash.
 
-    ### Retrieving it from the local variable 
+### Retrieving it from the local variable 
 
     If the user ran `/view_latest_block` or `/view_multiple_blocks`, the user may have been prompted to save certain bits of information about the block if they wanted to (check "Viewing the latest block" for more details). If the user had saved the block's hash by typing `hash`, then the hash would have been saved under their local variable, which could be used to view the block's transaction details in this case. 
     
@@ -92,20 +92,20 @@ One of the important factors for this command to work is the block hash. There a
     This method is one of the most efficient methods to obtain hashes.
 
 
-    ### Typing the hash code manually
+### Typing the hash code manually
 
 
     Of course, if the user has a block hash ready to go, the user can deny the prompt of having a block hash saved, and can enter their hash code manually when the program prompts them to.
 
 After inputting the hash, the program will scrape *EtherScan* for it's information. If it has scraped successfully, the user should see information being outputted in the terminal, which at the end, can be saved similar to when retreiving information about blocks (more details about this under "Viewing latest block").
 
-    ### Inputting Issues
+### Inputting Issues
 
-    If the user fails to type in a correct input, the progarm will end the process and will prompt the user to type in the command again.
+If the user fails to type in a correct input, the progarm will end the process and will prompt the user to type in the command again.
 
-    One of the most common mistakes is to type the wrong number when the program is retreiving hash codes from the user's local varible. *Typing a number that is not listed or a letter* will result in the process ending. 
+One of the most common mistakes is to type the wrong number when the program is retreiving hash codes from the user's local varible. *Typing a number that is not listed or a letter* will result in the process ending. 
 
-    Another error which is very common is to have the wrong hash code. Make sure it's the block hash, which can be found explicitly under the "block's hash" section on EtherScan when on a block. Do note that different platforms may have different ways to output their block hash, but it's typically very evident to find it as they will most probably have it under a section called "Block hash" or "Block's hash".
+Another error which is very common is to have the wrong hash code. Make sure it's the block hash, which can be found explicitly under the "block's hash" section on EtherScan when on a block. Do note that different platforms may have different ways to output their block hash, but it's typically very evident to find it as they will most probably have it under a section called "Block hash" or "Block's hash".
 
 
 # Sources
