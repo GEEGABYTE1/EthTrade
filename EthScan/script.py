@@ -1,8 +1,13 @@
 import time
 from web3 import Web3
+from ether_scan import ether_base
 
 
 class Script:
+
+    def __init__(self):
+        self.intro()
+        self.scripting()
 
     def intro(self):
         print("\t"*5)
@@ -28,10 +33,19 @@ class Script:
         time.sleep(0.3)
 
         while True:
+            print("\n")
             prompt = str(input(':'))
 
             if prompt == '/connect_chain':
-                pass
+                ether_base.infura_url_setter()
+                connection_status = ether_base.connection()
+                if connection_status == False:
+                    print("Connection insuccessful")
+                    time.sleep(0.2)
+                    print("Read the documentation for help! ") 
+                else:
+                    print("Connection Successful")               
+
             elif prompt == '/view_latest_block':
                 pass
             elif prompt == '/view_multiple_blocks':
@@ -42,4 +56,5 @@ class Script:
 
 
 
-
+test = Script()
+print(test)
