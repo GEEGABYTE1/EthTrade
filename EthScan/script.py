@@ -47,7 +47,7 @@ class Script:
                 ether_base.infura_url_setter()
                 connection_status = ether_base.connection()
                 if connection_status == False:
-                    print("Connection insuccessful")
+                    print("Connection unsuccessful")
                     time.sleep(0.2)
                     print("Read the documentation for help! ") 
                 else:
