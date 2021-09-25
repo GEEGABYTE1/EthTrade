@@ -60,8 +60,18 @@ Moreover, this dictionary does come in-handy when viewing transaction details as
 
 ## Viewing Multiple Blocks 
 
+Instead of just viewing one block, users can also look at multiple blocks. This command will work just like when viewing the latest block (read "Viewing the latest block" for more details), but instead, will print multiple blocks from the chain depending on the number of blocks the user wants to see.
+
+Syntax: `/view_multiple_blocks`
+
+The user will be prompted to type in a number of blocks they would like to see. Then the program will scrape information from each block from *latest transaction to oldest transaction* all the way up until the desired number of blocks have been scraped. 
+
+The process of printing and saving information to the user's local variable remains the same as when the user wants to view the latest block. To get more information about the process, you can read the section "Viewing the latest block" on this documentation.
+
+Note that depending on the user's performance and it's background processes, this may affect both the background applications' performance and the program's performance. This is linear to the number of blocks the user wants to see. In other words, the more blocks the user wants to see, the more performance it will take. Some times, connection to the ethereum chain might even be a factor that affects the speed of the scraping. But any case, this process takes a lot of computational power. 
 
 ## Viewing Transaction Details
+
 
 
 # Sources
