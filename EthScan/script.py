@@ -90,13 +90,13 @@ class Script:
                                     break
                                 except IndexError:
                                     print("That number does not seem valid")
-                                
-                    hash_prompt = str(input('Please enter your hashcode: '))
-                    hash_prompt = hash_prompt.strip(" ")
-                    current_hash = hash_prompt 
+                    else:         
+                        hash_prompt = str(input('Please enter your hashcode: '))
+                        hash_prompt = hash_prompt.strip(" ")
+                        current_hash = hash_prompt 
                     
                     retrieved_information = ether_base.view_transaction_details(current_hash, transaction_number)
-                    print(retrieved_information)
+                    self.viewing_block_information(retrieved_information)
                 except:
                     print("There is an input error that had occured")
                     time.sleep(0.1)
@@ -104,7 +104,11 @@ class Script:
                 
 
             elif prompt == '/retrieve_saved_data':
-                pass
+                if len(list(self.saved_user_retrieves.values())) == 0:
+                    print("You have nothing saved")
+                else:
+                    for key, value in self.saved_user_retrieves.items():
+                        print("{}: {}".format(key, value))
 
             self.counter += 1
 
