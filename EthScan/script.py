@@ -12,8 +12,7 @@ class Script:
         self.intro()
         self.scripting()
         
-        
-
+    
     def intro(self):
         print("\t"*5)
         print("To view the blockchain, here are the commands: ")
@@ -29,6 +28,9 @@ class Script:
         print("-"*15)
         time.sleep(0.5)
         print("/view_transaction_block")
+        print("-"*15)
+        time.sleep(0.5)
+        print('/retrieve_saved_data')
         print("-"*15)
         time.sleep(0.5)
         print("\t"*5)
@@ -61,12 +63,47 @@ class Script:
                 blocks = ether_base.get_multiple_blocks(number)
                 
                 for block in blocks:
-                    pass
+                    self.viewing_block_information(block)
 
             elif prompt == '/view_transaction_block':
-                pass
+                try:
+                    transaction_number = int(input('Please enter the number of which the transaction occured: '))
+                    block_hash = str(input("Do you have a block hash saved already? (type y/n): "))
+                    current_hash = None
+                    if block_hash == 'y':
+                        hashes = []
+                        for num in range(0, self.counter):
+                            current_hash = self.saved_user_retrieves.get('hash' + str(num), None)
+                            if current_hash != None:
+                                current_hash = ether_base.web3.toHex(current_hash)
+                                hashes.append(current_hash)
+                        if len(hashes) == 0:
+                            print("You do not have a hash saved")
+                        else:
+                            for hash_code in range(len(hashes)):
+                                print('{}: {}'.format(hash_code, hashes[hash_code]))
+                            
+                            while True:
+                                prompt_index = int(input("Please enter the corresponding number to choose your hash: "))
+                                try:
+                                    current_hash = hashes[prompt_index]
+                                    break
+                                except IndexError:
+                                    print("That number does not seem valid")
+                                
+                    hash_prompt = str(input('Please enter your hashcode: '))
+                    hash_prompt = hash_prompt.strip(" ")
+                    current_hash = hash_prompt 
+                    
+                    retrieved_information = ether_base.view_transaction_details(current_hash, transaction_number)
+                    print(retrieved_information)
+                except:
+                    print("There is an input error that had occured")
+                    time.sleep(0.1)
+                    print("Please check the documentation for more information")
+                
 
-            elif prompt == '/saved_information':
+            elif prompt == '/retrieve_saved_data':
                 pass
 
             self.counter += 1

@@ -18,7 +18,6 @@ class Scan:
             return True 
         else:
             return False
-
     
     def get_latest_block(self):
         latest = self.web3.eth.blockNumber
