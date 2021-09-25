@@ -1,4 +1,4 @@
-# Ethscan 
+# Ethscan 💎
 
 Look at all the blockchain information live right from your terminal! 
 
@@ -10,7 +10,7 @@ Do note that the program does scrape the most latest block in the ethereum chain
 Of course, there might be factors from the user's end (read "Connecting to the chain" for more details), but these are also some blockchain limitations to consider. 
 
 
-# Program 
+# Program 🔮
 
 ## Connecting to the chain 
 
@@ -107,7 +107,7 @@ One of the most common mistakes is to type the wrong number when the program is 
 Another error which is very common is to have the wrong hash code. Make sure it's the block hash, which can be found explicitly under the "block's hash" section on EtherScan when on a block. Do note that different platforms may have different ways to output their block hash, but it's typically very evident to find it as they will most probably have it under a section called "Block hash" or "Block's hash".
 
 
-# Sources
+# Sources 📝
 
 These sources can be used for reference when there may be a connection error (more details under the "Connecting to the chain" section) or to learn more about how these platforms work.
 
