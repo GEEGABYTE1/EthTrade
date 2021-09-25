@@ -15,6 +15,8 @@ In order to start using the commands, it is necessary for the user to connect to
 
 In order to connect to the chain, the user will be prompted to type a command into their terminal. In this case, we will assume the user has not connected their account yet. And hence, we will with the `/connect_chain` command, the user will be prompted to type their infura url. 
 
+Syntax: `/connect_chain`
+
 *Infura* is a blockchain suite that servers APIs and Developer tools very quickly. If you want to learn more, you could always go on their website:
 
 <a href="https://infura.io">Infura</a>
@@ -27,6 +29,7 @@ After the user has obtained the infura link, they will paste it into their termi
 
 At times there might be connection problems, which will print to the user `Connection unsuccessful`. There are a few reasons why this may happen. This can be due to bugs in the `*Web3* library, a disconnection between the library to the chain, infura disconnection, or a network problem from the user's end. 
 
+
 In the case that the user's network is working perfectly, they might need a vpn to connect to a region that has a stronger Ethereum Chain connection (one with less network time), or can change ports depending on their knowledge on networks. If that does not work, the user may need to reset their computer, or their wifi.
 
 Sometimes, there might even be a bug in on of the platforms, and in that case, nothing from the user's end can be done. In this case, the user has to keep up with the background platforms, which can be found under the "sources" section of this documentation.
@@ -37,7 +40,26 @@ Of course, if the connection of the user to their network is unstable, this migh
 
 ## Viewing the latest block
 
+Users can view all the information about the latest transaction on the Ethereum Chain. The terminal will scrape *EtherScan* for all the information about the latest block. 
+
+Users can view the miner, hash, compleity, nonce, gasprice, and etc, with only one command.
+
+Syntax: `/view_latest_block`
+
+*Note*: This command will only work when the user has succesfully connected to the Ethereum chain.
+
+After running this command, the program will output all the necessary information about the latest block. Depending on the performance of the user's hardware, this process can slow up other processes on the user's platform, and can generally slow the scarpeing process down as well. Note that if there is an input error, for example, not typing a correct data type, the process will end, and the user will be prompted to type the command again.
+
+But in any case, the program does prompt explicitly the type of input it needs.
+
+### Storing Retrieved Data 
+
+After retriving all the data about the latest block, the program will prompt the user to save any peice of data from the latest block. If the user types `y`, they will be prompted to choose a heading that will correspond to the type of informaion they want to save. After successfully typing a desired heading, the information will then be saved in to a local dictionary under the user's account, which can be retrieved with the `/retrieve_saved-data` command. 
+
+Moreover, this dictionary does come in-handy when viewing transaction details as well. For example, one of the benefits of this feature is that users can retrieve hash codes of other accounts very easily, which can make making and studying transactions very easy (you can read the "Viewing Transaction Details" for more information about).
+
 ## Viewing Multiple Blocks 
+
 
 ## Viewing Transaction Details
 
