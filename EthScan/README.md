@@ -107,6 +107,11 @@ One of the most common mistakes is to type the wrong number when the program is 
 Another error which is very common is to have the wrong hash code. Make sure it's the block hash, which can be found explicitly under the "block's hash" section on EtherScan when on a block. Do note that different platforms may have different ways to output their block hash, but it's typically very evident to find it as they will most probably have it under a section called "Block hash" or "Block's hash".
 
 
+### Universal Command
+
+Users can quit the process with the `/quit` command and return to the home page. All their information will be saved on their local memory. Do note that the user should not worry about their performance of the memory as it won't take occupy too much on the user's cpu.
+
+
 # Sources 📝
 
 These sources can be used for reference when there may be a connection error (more details under the "Connecting to the chain" section) or to learn more about how these platforms work.
