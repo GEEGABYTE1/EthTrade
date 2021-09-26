@@ -6,8 +6,8 @@ from web3 import Web3
 class ContractScript:
     
     def __init__(self):
-        pass 
-
+        self.intro() 
+        self.contracting()
 
     def intro(self):
         print("\t"*5)
@@ -33,6 +33,45 @@ class ContractScript:
         print("-"*15)
         time.sleep(0.5)
         print("\t"*5)
+    
+    def contracting(self):
+        print("*Note*: Some commands may not work right away. You may need to run a certain other command for some commands to run")
+        time.sleep(0.3)
+
+        while True:
+            print("\n")
+            prompt = str(input(':'))
+
+            if prompt == '/connect_chain':
+                contract.infura_url_setter()
+                connection_status = contract.connection()
+                if connection_status == False:
+                    print("Connection unsuccessful")
+                    time.sleep(0.2)
+                    print("Read the documentation for help! ") 
+                else:
+                    print("Connection Successful")
+            
+            elif prompt == '/verify_contract':
+                user_address = str(input("Please enter the contract address: "))
+                user_address = user_address.strip(" ")
+                user_abi = str(input('''Please enter the abi of the contract: '''))
+                user_abi = user_abi.strip(" ")
+                try:
+                    user_contract = contract.checking_contract(user_abi, user_address)
+                    if user_contract:
+                        print("Contract has been verified: {}".format(user_contract))
+                except:
+                    print("There seems to be an input error")
+                    time.sleep(0.3)
+                    print("Read the documentation for help if the error continues")
+
+            
+
+
+        
+
+    
 
 
 contract_script = ContractScript()
