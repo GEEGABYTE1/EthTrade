@@ -109,6 +109,9 @@ class Script:
                 else:
                     for key, value in self.saved_user_retrieves.items():
                         print("{}: {}".format(key, value))
+            
+            elif prompt == '/quit':
+                break
 
             self.counter += 1
 
