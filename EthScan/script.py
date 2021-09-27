@@ -113,6 +113,9 @@ class Script:
             elif prompt == '/quit':
                 break
 
+            else:
+                print("That command does not seem valid")
+
             self.counter += 1
 
             
