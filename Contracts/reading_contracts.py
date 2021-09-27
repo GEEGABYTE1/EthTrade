@@ -31,16 +31,16 @@ class Contract:
         ethered_supply = self.web3.fromWei(totalsupply, 'ether')
         return ethered_supply 
     
-    def get_name(self):
-        name = self.contract.functions.name.call()
+    def get_name(self, contract):
+        name = contract.functions.name().call()
         return name 
 
-    def get_symbol(self):
-        symbol = self.contract.functions.symbol().call()
+    def get_symbol(self, contract):
+        symbol = contract.functions.symbol().call()
         return symbol 
 
-    def balance_of_contract_holder(self, token_hash):
-        get_balance = self.contract.functions.balanceOf(token_hash)
+    def balance_of_contract_holder(self, token_hash, contract):
+        get_balance = contract.functions.balanceOf(token_hash)
         get_balance_ether = self.web3.fromWei(get_balance, 'ether')
         return get_balance_ether
 
