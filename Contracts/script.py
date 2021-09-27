@@ -165,14 +165,41 @@ class ContractScript:
                 except:
                     self.error()
 
+            elif prompt == '/view_holder_balance':
+                user_token = str(input("Please type in the contract hash: "))
+                checker = None
+                time.sleep(0.2)
+                for contract in range(len(self.contracts)):
+                    print("{}: {}".format(contract, self.contracts[contract]))
+                try:
+                    while True:
+                        print('\n')
+                        user_contract = int(input("Please enter the corresponding number to view the total supply of a certain contract: "))
+                        if user_contract >= len(self.contracts):
+                            print("That value seems to big ")
+                        elif user_contract == '/quit':
+                            break
+                        else:
+                            contract_specified = self.contracts[user_contract]
+                            contract_balance = self.contract.balance_of_contract_holder(user_token, contract_specified)
+                            checker = True 
+                            break
+
+                    time.sleep(0.3)
+                    if checker == True:
+                        print("Contract Balance: {} ether".format(contract_balance))
+                 
+                except:
+                    self.error()
 
             
+            elif promt == '/quit':
+                break 
+            
+            else:
+                print("That command does not seem valid")
+                            
 
-
-
-        
-
-    
 
 
 contract_script = ContractScript()
