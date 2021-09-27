@@ -40,7 +40,7 @@ class Contract:
         return symbol 
 
     def balance_of_contract_holder(self, token_hash, contract):
-        get_balance = contract.functions.balanceOf(token_hash)
+        get_balance = contract.functions.balanceOf(token_hash).call()
         get_balance_ether = self.web3.fromWei(get_balance, 'ether')
         return get_balance_ether
 
