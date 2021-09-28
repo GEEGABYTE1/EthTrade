@@ -1,7 +1,10 @@
 # Contract Information
 
 
-# Viewing Contracts 
+# Reading Contracts 
 
 
-# Creating and Deploying Contracts
+# Creating Contracts 
+
+
+# Deploying Contracts
