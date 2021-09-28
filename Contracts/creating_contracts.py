@@ -8,6 +8,7 @@ class Creating_Contract:
 
     def infura_url_setter(self):
         url = str(input("Please enter your RPC Server: "))
+        # Include Ganache Simulation Incorporation
         if url == '/help':
             print("Please read the documentation under EthContracts to view how to get an infura url")
         else:
@@ -20,3 +21,32 @@ class Creating_Contract:
             return True 
         else:
             return False
+
+    def setting_default_account(self, account):
+        self.web3.eth.defaultAccount = web3.eth.accounts[0]
+
+
+    def insert_contract_abi(self, abi):
+        abi = json.loads(abi)
+        return abi 
+
+    def contract_address(self, address):
+        address = self.web3.toChecksumAddress(adress)
+        return address 
+
+    def initializing_contract(self, address, abi):
+        contract = self.web3.th.contract(address=adress, abi=abi)
+        return contract 
+
+    def getting_default_greeting(self, contract):
+        greeting = contract.functionst.greet().call()
+        return greeting 
+
+    def set_new_greeting(self, contract):
+        user_greeting = input('Please type in a new greeting: ')
+        user_greeting = user_greeting.strip(" ")
+        contract_hash = contract.functions.setGreeting(user_greeting).transact()
+        
+        self.web3.ethwaitForTransactionReceipt(contract_hash)
+        formatted_value = contract.functions.greet().call()
+        return formatted_value
