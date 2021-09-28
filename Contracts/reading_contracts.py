@@ -8,7 +8,7 @@ class Contract:
     def infura_url_setter(self):
         url = str(input("Please enter your infura_url: "))
         if url == '/help':
-            print("Please read the documentation under EthScan to view how to get an infura url")
+            print("Please read the documentation under EthContracts to view how to get an infura url")
         else:
             self.infura_url = url 
 
