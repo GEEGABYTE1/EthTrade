@@ -50,3 +50,6 @@ class Creating_Contract:
         self.web3.ethwaitForTransactionReceipt(contract_hash)
         formatted_value = contract.functions.greet().call()
         return formatted_value
+
+
+cc = Creating_Contract()
