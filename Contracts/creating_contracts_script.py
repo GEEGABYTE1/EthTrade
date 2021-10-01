@@ -21,7 +21,7 @@ class C_Con:
         print("/set_default_account")
         print("-"*15)
         time.sleep(0.5)
-        print("/create_contract")
+        print("/initialize_contract")
         print("-"*15)
         time.sleep(0.5)
         print("/get_default_message")
@@ -57,12 +57,33 @@ class C_Con:
             
             elif prompt == '/set_default_account':
                 user_account = str(input("Please insert a user hash: "))
+                user_account = user_account.strip(' ')
                 try:
                     if len(user_account) != len(self.web3.eth.accounts[0]):
                         raise Exception()
                     self.cc.setting_default_account(user_account)
                 except:
                     print("There has been a problem setting this account to default status. Check our hash again, or try reading the documentation")
+
+            elif prompt == '/initialize_contract':
+                user_abi = str(input('Please enter the abi of your contract: '))
+                user_abi = user_abi.strip(" ")
+                try:
+                    abi = self.cc.insert_contract_abi(user_abi)
+                    user_address = str(input('Please enter the hash address of your contract: '))
+                    user_address = user_address.strip(' ')
+                    contract_address = self.cc.contract_address(user_address)
+
+                    new_contract = self.cc.initializing_contract(user_address, user_abi)
+                    time.sleep(0.3)
+                    print("Contract: {} has been initialized succesfully. ".format(user_address))
+            
+                except:
+                    print("There seems to be an input error. ")
+                    time.sleep(0.2)
+                    print("Read the Documentation for more details on how to resolve this problem. ")
+
+
             
 
 c_con = C_Con()
