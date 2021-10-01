@@ -1,8 +1,10 @@
 import json 
 from web3 import Web3
 from creating_contracts import cc
+import time
 
 class C_Con:
+    cc = cc 
     
     def __init__(self):
         self.intro() 
@@ -51,6 +53,21 @@ class C_Con:
                     print("Read the documentation for help!")
                 else:
                     print("Connection Successful")
+
+            
+            elif prompt == '/set_default_account':
+                user_account = str(input("Please insert a user hash: "))
+                try:
+                    if len(user_account) != len(self.web3.eth.accounts[0]):
+                        raise Exception()
+                    self.cc.setting_default_account(user_account)
+                except:
+                    print("There has been a problem setting this account to default status. Check our hash again, or try reading the documentation")
+            
+
+c_con = C_Con()
+
+print(c_con)
         
 
             

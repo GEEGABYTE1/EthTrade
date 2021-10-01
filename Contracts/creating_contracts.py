@@ -12,10 +12,10 @@ class Creating_Contract:
         if url == '/help':
             print("Please read the documentation under EthContracts to view how to get an infura url")
         else:
-            self.infura_url = url 
+            self.rpc_url = url 
 
     def connection(self):
-        self.web3 = Web3(Web3.HTTPProvider(self.infura_url))
+        self.web3 = Web3(Web3.HTTPProvider(self.rpc_url))
         status = self.web3.isConnected()
         if status == True:
             return True 
@@ -23,7 +23,8 @@ class Creating_Contract:
             return False
 
     def setting_default_account(self, account):
-        self.web3.eth.defaultAccount = web3.eth.accounts[0]
+        self.web3.eth.defaultAccount = account 
+        print("Setting default account complete")
 
 
     def insert_contract_abi(self, abi):
@@ -35,7 +36,7 @@ class Creating_Contract:
         return address 
 
     def initializing_contract(self, address, abi):
-        contract = self.web3.th.contract(address=adress, abi=abi)
+        contract = self.web3.eth.contract(address=adress, abi=abi)
         return contract 
 
     def getting_default_greeting(self, contract):
