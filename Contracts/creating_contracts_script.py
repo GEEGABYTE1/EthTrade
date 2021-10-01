@@ -3,9 +3,7 @@ from web3 import Web3
 from creating_contracts import cc
 
 class C_Con:
-    contracts = [] 
-    contract = contract 
-
+    
     def __init__(self):
         self.intro() 
         self.creating_contracting()
@@ -45,14 +43,17 @@ class C_Con:
             prompt = str(input(':'))
 
             if prompt == '/connect_chain':
-                self.contract.infura_url_setter()
-                connection_status = self.contract.connection()
+                self.cc.infura_url_setter()
+                connection_status = self.cc.connection()
                 if connection_status == False:
-                    print("Connection unsuccessful")
+                    print("Connection Unsuccessful")
                     time.sleep(0.2)
-                    print("Read the documentation for help! ") 
+                    print("Read the documentation for help!")
                 else:
                     print("Connection Successful")
+        
+
+            
 
 
 
