@@ -5,6 +5,7 @@ import time
 
 class C_Con:
     cc = cc 
+    created_ccs = [] 
     
     def __init__(self):
         self.intro() 
@@ -74,14 +75,45 @@ class C_Con:
                     user_address = user_address.strip(' ')
                     contract_address = self.cc.contract_address(user_address)
 
-                    new_contract = self.cc.initializing_contract(user_address, user_abi)
+                    new_contract = self.cc.initializing_contract(contract_address,abi)
                     time.sleep(0.3)
                     print("Contract: {} has been initialized succesfully. ".format(user_address))
+                    self.created_ccs.append(new_contract)
             
                 except:
                     print("There seems to be an input error. ")
                     time.sleep(0.2)
                     print("Read the Documentation for more details on how to resolve this problem. ")
+
+            elif prompt == '/get_default_message':
+                if len(self.created_ccs) == 0:
+                    print("There is no contract to look at")
+                else:
+                    print('\n')
+                    for contract in range(len(self.created_ccs)):
+                        print('{}: {}'.format(contract, self.created_ccs[contract]))
+                        print('-'*24)
+                        time.sleep(0.1)
+                    
+                    try:
+                        user_index = int(input("Please input a corresponding index: "))
+                        corresponding_contract = self.created_ccs[user_index]
+                        contract_greeting = self.cc.getting_default_greeting(corresponding_contract)
+                        time.sleep(0.1)
+                        print(contract_greeting)
+                    except:
+                        print("There seems to be an input error.")
+                        time.sleep(0.2)
+                        print("Read the Documentation for more details on how to resolve this problem. ")
+
+            elif prompt == '/set_default_message':
+                                    
+
+
+                    
+
+            
+            
 
 
             
