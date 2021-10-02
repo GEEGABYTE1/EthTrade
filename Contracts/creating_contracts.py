@@ -36,19 +36,19 @@ class Creating_Contract:
         return address 
 
     def initializing_contract(self, address, abi):
-        contract = self.web3.eth.contract(address=adress, abi=abi)
+        contract = self.web3.eth.contract(address=address, abi=abi)
         return contract 
 
     def getting_default_greeting(self, contract):
-        greeting = contract.functionst.greet().call()
+        greeting = contract.functions.greet().call()
         return greeting 
 
     def set_new_greeting(self, contract):
-        user_greeting = input('Please type in a new greeting: ')
+        user_greeting = input('Please type in your desired contract information: ')
         user_greeting = user_greeting.strip(" ")
         contract_hash = contract.functions.setGreeting(user_greeting).transact()
         
-        self.web3.ethwaitForTransactionReceipt(contract_hash)
+        self.web3.eth.waitForTransactionReceipt(contract_hash)
         formatted_value = contract.functions.greet().call()
         return formatted_value
 
