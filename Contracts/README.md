@@ -66,6 +66,19 @@ To obtain the contract hash, the user will find it when the contract has been co
 
 # Updating Contracts
 
+Users can both update and retrieve the contract message right from their terminal with ease. In terms of retrieving the contract message, the user can easily do so with one command:
+
+Syntax: `/get_default_message`
+
+The user may need a contract hash (read section "Setting Default Account" for more information) in order for the program to reference the content of a desired contract. After successfully inputting a relevant contract hash, the user will have the contract's message in constant time. 
+
+## Obtaining Contract Information Problems 
+
+The user may be faced with an error due to the contract hash not being able to direct the program to the contract object itself. There are two main reasons for that; one, being that the user may have typed the contract has wrong, or has entered another hash of a different type of info, such as a transaction hash. In both cases, the user must be careful and certain that their hash is *relevant* to the contract they want.
+
+The one exception is that the user may have entered a contract that is either old, or has not been deployed to the chain. In that case, the user must contact the contract creator or owner, or has to deploy the contract iself by themselves.
+
+
 
 # Sources
 
