@@ -32,10 +32,33 @@ Of course, if the connection of the user to their network is unstable, this migh
 However, do note that when creating a contract or deploying on simulated blockchains, a network connection problem should not be issue, since the program is connected with the user's local host.
 
 
+# Creating/Deploying Contracts 
 
-# Creating Contracts 
+Users can also create and deploy their contracts right from their terminal. The only pre-requisite is that the user must have a contract programmed in solidity, and must have the abi when compiled. 
 
-* Don't forget to add this into documentation: "You can use any contract as long as you have the abi in string format".*
+If the user has failed to do so, then we definitely recommend compiling the contract on Ethereum's Remix IDE (under the sources section) as it allows for easy contract analysis.
+
+Syntax: `/initialize_contract`
+
+For the user to succesfully have their contract deployed, they must have their contract fully functional with no bugs nor errors. The only parameters this process needs is the abi and the contract address. Note that both of these pieces of information can be found when the contract has been compiled on Ethereum's Remix. 
+
+After successfully creating a contract, the user can either modify, or view their contracts. 
+
+To modify, please read the section "Updating Contracts" for more information. However, to view all the contracts, 
+type `/view_contracts` to view all the contracts. The user will be informed if they have not created any contracts yet and wish to view some sort of contract.
+
+## Creation Issues
+
+In the case the user is faced with the message `"There seems to be an input error"`, the user may entered either the incorrect abi or address, or have entered an inactive one that may not match. In both cases, the user must make sure that when they compile their contract, they have the right information about their contract. 
+
+If the user is on Remix, they can immediately find the abi by clicking on `"Compiliation Details"`, and going under `"WEB3DEPLOY"`. Under that, the user will copy the *array* only in the variable `var ContractName`. Make sure that at the end of the abi, the user must remove the semi-colon and the closing bracket like this: `);` in order to avoid any errors in the program.
+
+To obtain the contract hash, the user will find it when the contract has been compiled succesfully. They can either find that under their simulated blockchain or on Remix under `"Compilation Details"`. If the user still struggles to find their contract hash, they can deploy their contract successfully on Remix, which will then be faced with the contract address either on their blockchain (simulated or real), or under the `"Deployed Contracts"` section under the `"Deploy and Run Transactions"` tab on Remix. 
 
 
-# Deploying Contracts
+# Updating Contracts
+
+
+# Sources
+
+Remix: https://remix.ethereum.org/#optimize=false&runs=200&evmVersion=null&version=soljson-v0.8.7+commit.e28d00a7.js
