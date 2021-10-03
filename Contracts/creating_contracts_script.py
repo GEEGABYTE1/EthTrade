@@ -125,6 +125,15 @@ class C_Con:
                         print("There seems to be an input error.")
                         time.sleep(0.2)
                         print("Read the Documentation for more details on how to resolve this problem. ")
+
+            elif prompt == '/view_contracts':
+                if len(self.created_ccs) == 0:
+                    print("You have not created any contracts yet")
+                else:
+                    for contract in self.created_ccs:
+                        print('-'*24)
+                        print(contract)
+                        time.sleep(0.2)
             
             elif prompt == '/quit':
                 break
