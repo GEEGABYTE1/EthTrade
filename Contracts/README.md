@@ -93,8 +93,20 @@ The first one being the incorrect contract hash. In this case, read scetion "Obt
 
 The second reason why is may be due to bugs in the library, or the blockchain technology being to advacned for the library. These cases are very rare, and if so present at any time, the user is recommended to the read the documentation of *Web3* and *Ethereum* (these sources will be under the "Sources" section) for updates.
 
+### Universal Command
+
+Users can quit the process with the `/quit` command and return to the home page. All their information will be saved on their local memory. Do note that the user should not worry about their performance of the memory as it won't take occupy too much on the user's cpu.
+
+Also note that the contract processing time is based on the Ethereum Blockchain or on the user's simulated blockchain application if connected to a simulated rpc. 
 
 
-# Sources
+# Sources 📝
 
-Remix: https://remix.ethereum.org/#optimize=false&runs=200&evmVersion=null&version=soljson-v0.8.7+commit.e28d00a7.js
+These sources can be used for reference when there may be a connection error, an input error, or to learn more about how these platforms work.
+
+ - Remix: https://remix.ethereum.org/#optimize=false&runs=200&evmVersion=null&version=soljson-v0.8.7+commit.e28d00a7.js
+ - EtherScan: https://etherscan.io
+ - Web3: https://web3js.readthedocs.io/en/v1.5.2/
+ - Ethereum: https://ethereum.org/en/
+
+
