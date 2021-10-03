@@ -16,6 +16,14 @@ Syntax: `/connect_chain`
 
 Do note that for simulated blockchains, users must have their live blockchain running in the background for the program to connect successfully. 
 
+## Setting Default Account
+
+Users can change their default account for easy access to communicate with the chain if they wish to do so. The only parameter the user must have is the user hash of their desired user. They can do this right from our program (read section under "Storing Retrieved Data" under the directory EthScan), or can obtain it manually from an external program. 
+
+### Default Account Problems
+
+The most common problem with setting a new default account is that some hashes may have expired with deleted accounts, or the user has entered an incorrect hash. In either case, the user must make sure that their desired account is up-to-date and is correlated with the user, and not any other information, such as transactions.
+
 ### Connection Problems
 
 At times there might be connection problems, which will print to the user `Connection unsuccessful`. There are a few reasons why this may happen. This can be due to bugs in the `*Web3* library, a disconnection between the library to the chain, a simulated blockchain connection problem, or a network problem from the user's end. 
