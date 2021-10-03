@@ -43,7 +43,7 @@ class Creating_Contract:
         return greeting 
 
     def set_new_greeting(self, contract):
-        user_greeting = input('Please type in your desired contract information: ')
+        user_greeting = str(input('Please type in your desired contract information: '))
         user_greeting = user_greeting.strip(" ")
         contract_hash = contract.functions.setGreeting(user_greeting).transact()
         
