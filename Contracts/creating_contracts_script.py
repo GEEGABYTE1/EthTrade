@@ -31,6 +31,8 @@ class C_Con:
         print("/set_default_message")
         print("-"*15)
         time.sleep(0.5)
+        print("/view_contracts")
+        time.sleep(0.5)
 
     def error(self):
         print("There seems to be an input error")

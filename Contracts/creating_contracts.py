@@ -8,7 +8,6 @@ class Creating_Contract:
 
     def infura_url_setter(self):
         url = str(input("Please enter your RPC Server: "))
-        # Include Ganache Simulation Incorporation
         if url == '/help':
             print("Please read the documentation under EthContracts to view how to get an infura url")
         else:
