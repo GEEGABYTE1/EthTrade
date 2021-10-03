@@ -63,8 +63,7 @@ If the user is on Remix, they can immediately find the abi by clicking on `"Comp
 
 To obtain the contract hash, the user will find it when the contract has been compiled succesfully. They can either find that under their simulated blockchain or on Remix under `"Compilation Details"`. If the user still struggles to find their contract hash, they can deploy their contract successfully on Remix, which will then be faced with the contract address either on their blockchain (simulated or real), or under the `"Deployed Contracts"` section under the `"Deploy and Run Transactions"` tab on Remix. 
 
-
-# Updating Contracts
+# Retrieving Contract Contents
 
 Users can both update and retrieve the contract message right from their terminal with ease. In terms of retrieving the contract message, the user can easily do so with one command:
 
@@ -77,6 +76,22 @@ The user may need a contract hash (read section "Setting Default Account" for mo
 The user may be faced with an error due to the contract hash not being able to direct the program to the contract object itself. There are two main reasons for that; one, being that the user may have typed the contract has wrong, or has entered another hash of a different type of info, such as a transaction hash. In both cases, the user must be careful and certain that their hash is *relevant* to the contract they want.
 
 The one exception is that the user may have entered a contract that is either old, or has not been deployed to the chain. In that case, the user must contact the contract creator or owner, or has to deploy the contract iself by themselves.
+
+# Updating Contract Contents
+
+The user can also update the contents of a contract that has already been *deployed* to the chain. The only pre-requisite is that the user must have the contract hash with them (read section "Obtaining Contract Information Problems" for more information).
+
+Syntax: `/set_default_message`
+
+When the user types this command, the user will be prompted to type in a new message. After the user input, the program will set the message as the default greeting and will return the message to the user's locahost to confirm the update. 
+
+## Creation Problems
+
+If the user has an input error, then there are two possible reasons why.
+
+The first one being the incorrect contract hash. In this case, read scetion "Obtaining Contract Information Problems" for more information.
+
+The second reason why is may be due to bugs in the library, or the blockchain technology being to advacned for the library. These cases are very rare, and if so present at any time, the user is recommended to the read the documentation of *Web3* and *Ethereum* (these sources will be under the "Sources" section) for updates.
 
 
 
