@@ -1,8 +1,8 @@
-# Contract Information
+# Contract Information 🏗
 
 In EthScan, users can create, deploy, and read contracts right from their terminal. 
 
-# Reading Contracts 
+# Reading Contracts 🔎
 
 ## Connecting to the chain 
 
@@ -40,7 +40,7 @@ Of course, if the connection of the user to their network is unstable, this migh
 However, do note that when creating a contract or deploying on simulated blockchains, a network connection problem should not be issue, since the program is connected with the user's local host.
 
 
-# Creating/Deploying Contracts 
+# Creating/Deploying Contracts 🛠
 
 Users can also create and deploy their contracts right from their terminal. The only pre-requisite is that the user must have a contract programmed in solidity, and must have the abi when compiled. 
 
@@ -63,7 +63,7 @@ If the user is on Remix, they can immediately find the abi by clicking on `"Comp
 
 To obtain the contract hash, the user will find it when the contract has been compiled succesfully. They can either find that under their simulated blockchain or on Remix under `"Compilation Details"`. If the user still struggles to find their contract hash, they can deploy their contract successfully on Remix, which will then be faced with the contract address either on their blockchain (simulated or real), or under the `"Deployed Contracts"` section under the `"Deploy and Run Transactions"` tab on Remix. 
 
-# Retrieving Contract Contents
+# Retrieving Contract Contents 🪛
 
 Users can both update and retrieve the contract message right from their terminal with ease. In terms of retrieving the contract message, the user can easily do so with one command:
 
@@ -77,7 +77,7 @@ The user may be faced with an error due to the contract hash not being able to d
 
 The one exception is that the user may have entered a contract that is either old, or has not been deployed to the chain. In that case, the user must contact the contract creator or owner, or has to deploy the contract iself by themselves.
 
-# Updating Contract Contents
+# Updating Contract Contents 🔩
 
 The user can also update the contents of a contract that has already been *deployed* to the chain. The only pre-requisite is that the user must have the contract hash with them (read section "Obtaining Contract Information Problems" for more information).
 
