@@ -3,9 +3,7 @@ from web3 import Web3
 import json 
 
 class Creating_Contract:
-    infura_url_contract = None
-
-
+    
     def infura_url_setter(self):
         url = str(input("Please enter your RPC Server: "))
         if url == '/help':
