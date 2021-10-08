@@ -21,7 +21,8 @@ class Transaction:
     def create_transaction(self, account_1_hash, account_2_hash, private_key):
         transaction_dictionary = {'nonce': None, 'to': None, 'value':None, 'gas':200000, 'gasPrice':self.web3.toWei('50', 'gwei')}
         nonce = self.web3.eth.getTransactionCount(account_1_hash)
-        value = int(input("Please enter the amount (*In WEI*) you would like to send: "))
+        value = int(input("Please enter the amount (*In Ethereum*) you would like to send: "))
+        value = self.web3.toWei(1, 'ether')
         information = [nonce, account_2_hash, value]
         for header, data in transaction_dictionary.items():
             if len(information) == 0:

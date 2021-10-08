@@ -4,7 +4,7 @@ from transaction import transaction
 
 
 class Transaction_Script:
-    created_transactions = [] 
+    created_transactions = {}
     transaction = transaction
 
     def __init__(self):
@@ -40,6 +40,36 @@ class Transaction_Script:
                     print("Read the documentation for help!")
                 else:
                     print("Connection Successful")
+
+            elif prompt == '/create_transaction':
+                print("If you do not know your desired account hashes, or your private key, please read the documentation")
+                time.sleep(0.2)
+                
+                user_address_hash_1 = str(input("Please type in the your account hash: "))
+                user_address_hash_1 = user_address_hash_1.strip(" ")
+                time.sleep(0.3)
+                user_address_hash_2 = str(input("Please type in the user hash of the desired account (receiever): "))
+                user_address_hash_2 = user_address_hash_2.strip(" ")
+                user_private_key = str(input("Please type in your private key (Note: that this private key is not saved anywhere): "))
+                user_private_key = user_private_key.strip(" ")
+                desired_result = self.transaction.create_transaction(user_address_hash_1, user_address_hash_2, user_private_key)
+                signed_tx = self.transaction.sign_transaction(desired_result, user_private_key)
+                time.sleep(0.3)
+                print("Transaction Complete! {} \n".format(signed_tx))
+                time.sleep(0.2)
+                print("You can view your amount or the user's amount using EthScan.")
+                
+                self.created_transactions[signed_tx] = desired_result
+                time.sleep(0.4)
+                print("Transaction has been added to \"saved transactions\" as well")
+
+
+        
+            
+               
+                    
+
+    
 
 
 
