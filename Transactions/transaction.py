@@ -38,7 +38,8 @@ class Transaction:
         signed_hash = self.web3.toHex(signed_hash)
         return signed_hash
 
-        
+
+transaction = Transaction()
         
 
             
