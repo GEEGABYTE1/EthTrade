@@ -22,9 +22,6 @@ class Transaction_Script:
         print("/create_transaction")
         print("-"*15)
         time.sleep(0.5)
-        print("/sign_transaction")
-        print("-"*15)
-        time.sleep(0.2)
         print("/view_saved_transactions")
         print('-'*15)
         print("\t"*5)
@@ -71,11 +68,22 @@ class Transaction_Script:
 
 
             elif prompt == '/view_saved_transactions':
-                for tx_hash, obj in self.created_transactions.items():
-                    print('-'*24)
-                    print("Transaction Hash: {}".format(tx_hash))
-                    print("Transaction Object: {}".format(obj))
-                    time.sleep(0.2)
+                if not len(list(self.created_transactions.values())) == 0:
+                    for tx_hash, obj in self.created_transactions.items():
+                        print('-'*24)
+                        print("Transaction Hash: {}".format(tx_hash))
+                        print("Transaction Object: {}".format(obj))
+                        time.sleep(0.2)
+                else:
+                    print("There have not been any transactions made.")
+
+            elif prompt == '/quit':
+                break
+            
+            else:
+                print("That command is not valid")
+
+            
 
         
                
