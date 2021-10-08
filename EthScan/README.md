@@ -57,7 +57,7 @@ But in any case, the program does prompt explicitly the type of input it needs.
 
 ### Storing Retrieved Data 
 
-After retriving all the data about the latest block, the program will prompt the user to save any peice of data from the latest block. If the user types `y`, they will be prompted to choose a heading that will correspond to the type of informaion they want to save. After successfully typing a desired heading, the information will then be saved in to a local dictionary under the user's account, which can be retrieved with the `/retrieve_saved-data` command. 
+After retriving all the data about the latest block, the program will prompt the user to save any peice of data from the latest block. If the user types `y`, they will be prompted to choose a heading that will correspond to the type of informaion they want to save. After successfully typing a desired heading, the information will then be saved in to a local dictionary under the user's account, which can be retrieved with the `/retrieve_saved_data` command. 
 
 Moreover, this dictionary does come in-handy when viewing transaction details as well. For example, one of the benefits of this feature is that users can retrieve hash codes of other accounts very easily, which can make making and studying transactions very easy (you can read the "Viewing Transaction Details" for more information about).
 
