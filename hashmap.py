@@ -4,7 +4,7 @@ class HashMap:
         self.array_size = array_size 
         self.array = [None for i in range(self.array_size)]
     
-    def hash(key, collisions=0):
+    def hash(sefl, key, collisions=0):
         key_bytes = str(key).encode()
         hash_code = sum(key_bytes)
         return hash_code + collisions 
@@ -88,5 +88,6 @@ class HashMap:
                     return 
 
 
-hashmap = HashMap(10000)
+
+
 
