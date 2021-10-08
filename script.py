@@ -4,6 +4,7 @@ from contracts_script import ContractScript # Reading Contracts
 from creating_contracts_script import C_Con # Creating Contracts 
 from transaction_script import Transaction_Script # Creating Transaction 
 import time 
+from os import system
 
 
 
@@ -62,6 +63,7 @@ class Introduction:
                         retrieved_value_from_base = self.account_database.retrieve(user_user)
                         if user_password == retrieved_value_from_base[0]:
                             print("You have successfully logged in! ")
+                            system('clear')
                             retrieved_value_from_base[1].data()
                             break
                         else:
@@ -73,7 +75,9 @@ class Introduction:
                         time.sleep(0.2)
                         print("If you still need help, check out our documentation for more information")
 
+        
                 print("You have successfully quit the program")
+                break
 
 
 
@@ -82,8 +86,26 @@ class Node:
     log = []
 
     def data(self):
+        time.sleep(0.2)
+        print("\t"*5)
+        print("To get started, here are the commands: ")
+        print('\n')
+        time.sleep(0.5)
+        print("/analyze_the_chain")
+        print("-"*15)
+        time.sleep(0.5)
+        print("/read_contracts")
+        print("-"*15)
+        time.sleep(0.5)
+        print("/create_contract")
+        print("-"*15)
+        time.sleep(0.5)
+        print("/create_transaction")
+        print("-"*15)
+        time.sleep(0.5)
+        print("\t"*5)
+        print('\n')
         while True:
-            print('\n')
             primary_prompt = str(input(':'))
 
             if primary_prompt == '/analyze_the_chain':
