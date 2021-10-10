@@ -1,5 +1,5 @@
 
-# Transactions
+# Transactions 💳
 
 Users can create transactions right from their terminal either on a simulated chain, or on the real chain. 
 
