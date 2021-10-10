@@ -10,7 +10,9 @@ In order to start using the commands, it is necessary for the user to connect to
 
 In order to connect to the chain, the user will be prompted to type a command into their terminal. In this case, we will assume the user has not connected their account yet. And hence, we will with the `/connect_chain` command, the user will be prompted to type their RPC server.
 
-For simulated blockchains users can type their RPC link from ganache. All the functions are fully supported with simulated blockchains as long as the user has a live rpc running. Typically, the RPC link can be found very evidently, but if not, the user may need to read the documentation of their simulated blockchain application. 
+To connect to the real chain, the users will have to find their rpc server either from their wallet or on a trading platform, such as *EtherScan*. Note that there are unique ways of finding the rpc server link based on the application or service, therefore, the user must take the initative to learn the location of their service using an external resource. We sadly cannot help each user find their rpc link, due to the number of programs and services that help users connect to the chain. However, in future updates, the documentation may update. 
+
+For simulated blockchains users can type their RPC link hosted by their application, such as ganache. All the functions are fully supported with simulated blockchains as long as the user has a live rpc running. Typically, the RPC link can be found very evidently, but if not, the user may need to read the documentation of their simulated blockchain application. 
 
 Syntax: `/connect_chain`
 
