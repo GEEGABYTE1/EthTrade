@@ -29,9 +29,10 @@ Users can create transactions right from their terminal. This can either be on a
 Syntax: `/create_transaction`
 
 When the user types the command above, they will be prompted three times. The first time is to input their account hash. This can be found on the user's wallet, or the listed functions below: 
-    - `/view_latest_block`
-    - `/view_multiple_blocks`
-    - `/view_transaction_block`
+
+- `/view_latest_block`
+- `/view_multiple_blocks`
+- `/view_transaction_block`
 
 For more information about these functions, the user can navigate on `EthScan`'s documentation on the project's Github repository. 
 
