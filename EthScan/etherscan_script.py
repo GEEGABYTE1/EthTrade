@@ -60,7 +60,7 @@ class Script:
 
             elif prompt == '/view_multiple_blocks':
                 num = int(input('Please type in the number of latest blocks you would like to see: '))
-                blocks = ether_base.get_multiple_blocks(number)
+                blocks = ether_base.get_multiple_blocks(num)
                 
                 for block in blocks:
                     self.viewing_block_information(block)
